@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="generator" content="Madoko, version 0.9.23-beta" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  <meta name="author" content="" />
+  <title>Carl V. Lewis</title>
+  <style type="text/css"  class="link">
+  /*# sourceURL=madoko.css */
+  /* ---------------------------------------------------
+     Various settings to display madoko elements correctly.
+     For example, lines in tables or a table of contents.
+  
+     All rules use specific madoko classes and never just
+     a generic element. This means one can safely include
+     this CSS into any web page without affecting non-madoko
+     content.
+  ----------------------------------------------------*/
+  
+  /* The table of  contents */
+  .madoko .toc>.tocblock .tocblock .tocblock {
+    margin-left: 2.5em;
+  }
+  
+  .madoko .toc>.tocblock .tocblock {
+    margin-left: 1.7em;
+  }
+  
+  .madoko .toc>.tocblock>.tocitem {
+    font-weight: bold;
+  }
+  
+  .madoko .toc {
+    margin-top: 1em;
+  }
+  
+  /* Paragraphs */
+  .madoko p.para-continue {
+    margin-bottom: 0pt;
+  }
+  
+  .madoko .para-block+p {
+    margin-top: 0pt;
+  }
+  
+  .madoko ul.para-block, .madoko ol.para-block {
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+  }
+  
+  .madoko ul.para-end, .madoko ol.para-end {
+    margin-bottom: 1em;
+  }
+  
+  .madoko dl {
+    margin-left: 0em;
+  }
+  
+  .madoko blockquote {
+    font-style: italic;
+  }
+  
+  /* Local page links do not get an underline unless hovering */
+  .madoko a.localref {
+    text-decoration: none;
+  }
+  .madoko a.localref:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footnotes */
+  .madoko .footnotes {
+    font-size: smaller;
+    margin-top: 2em;
+  }
+  
+  .madoko .footnotes hr {
+    width: 50%;
+    text-align: left;
+  }
+  
+  .madoko .footnote { 
+    margin-left: 1em;
+  }
+  .madoko .footnote-before {
+    margin-left: -1em;
+    width: 1em;
+    display: inline-block;
+  }
+  
+  /* Abstract */
+  .madoko .abstract>p:first-child:before {
+    content: "Abstract. ";
+    font-weight: bold;
+  }
+  
+  .madoko .abstract {
+    margin-left: 2.7em;
+    margin-right: 2.7em;
+    font-size: small;
+  }
+  
+  
+  /* Alignment */
+  .madoko .align-center, .madoko .align-center>p {
+    text-align: center !important;
+  }
+  
+  .madoko .align-center pre {
+    text-align: left;
+  }
+  
+  .madoko .align-center>* {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .madoko .align-left, .madoko .align-left>p {
+    text-align: left !important;
+  }
+  
+  .madoko .align-left>* {
+    margin-left: 0pt !important;
+    margin-right: auto !important;
+  }
+  
+  .madoko .align-right, .madoko .align-right>p {
+    text-align: right !important;
+  }
+  
+  .madoko .align-right>* {
+    margin-left: auto !important;
+    margin-right: 0pt !important;
+  }
+  
+  .madoko .align-center>table,
+  .madoko .align-left>table,
+  .madoko .align-right>table {
+    text-align: left !important;
+  }
+  
+  
+  /* Equations, Figure's etc. */
+  .madoko .equation-before {
+    float: right;
+  }
+  
+  
+  /* Bibliography */
+  .madoko .bibitem {
+    font-size: smaller;
+  }
+  
+  .madoko .bib-numeric .bibitem {
+    margin-left: 3em;
+    text-indent: -3em;
+  }
+  
+  .madoko .bibitem-before {
+    display: none;
+  }
+  
+  .madoko .bib-numeric .bibitem-before {
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+  }
+  
+  .madoko .bibliography {
+  }
+  
+  .madoko .bibsearch {
+    font-size: x-small;
+    text-decoration:none;
+    color: black;
+    font-family: "Segoe UI Symbol", Symbola;
+  }
+  
+  /* General */
+  .madoko .block, .madoko .figure, .madoko .bibitem, .madoko .equation, .madoko div.math {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+  }
+  
+  .madoko .figure {
+    padding: 0.5em;
+    margin-left: 0pt;
+    margin-right: 0pt;
+  }
+  
+  .madoko .hidden {
+    display: none;
+  }
+  
+  .madoko .invisible {
+    visibility: hidden;
+  }
+  
+  .madoko.preview .invisible {
+    visibility: visible;
+    opacity: 0.5;
+  }
+  
+  .madoko code.code, .madoko span.code {
+    white-space: pre-wrap;
+  }
+  
+  .madoko hr, hr.madoko {
+    border: none;
+    border-bottom: black solid 1px;
+    margin-bottom: 0.5ex;
+  }
+  
+  .madoko .framed>*:first-child {
+    margin-top: 0pt;
+  }
+  .madoko .framed>*:last-child {
+    margin-bottom: 0pt;
+  }
+  
+  
+  /* Title, authors */
+  /*
+  .madoko .title {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 1ex;
+  }
+  
+  .madoko .subtitle {
+    font-size: x-large;
+    margin-bottom: 1ex;
+    margin-top: -1ex;
+  }
+  
+  .madoko .titleblock>* {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .madoko .titleblock table {
+    width: 80%;
+  }
+  
+  .madoko .authorblock .author {
+    font-size: large;
+  }
+  
+  .madoko .titlenote {
+    margin-top: -0.5ex;
+    margin-bottom: 1.5ex;
+  }
+  */
+  
+  /* Lists */
+  
+  .madoko ul.list-star {
+    list-style-type: disc;
+  }
+  
+  .madoko ul.list-dash {
+      list-style-type: none !important;
+  }
+  
+  .madoko ul.list-dash > li:before {
+      content: "\2013"; 
+      position: absolute;
+      margin-left: -1em; 
+  }
+  
+  .madoko ul.list-plus {
+    list-style-type: square;
+  }
+  
+  /* Tables */
+  .madoko table.madoko {
+    border-collapse: collapse;
+  }
+  .madoko td, .madoko th {
+    padding: 0ex 0.5ex;
+    margin: 0pt;
+    vertical-align: top;
+  }
+  
+  .madoko .cell-border-left {
+    border-left: 1px solid black;
+  }
+  .madoko .cell-border-right {
+    border-right: 1px solid black;
+  }
+  
+  
+  .madoko thead>tr:first-child>.cell-line,
+  .madoko tbody:first-child>tr:first-child>.cell-line {
+    border-top: 1px solid black;
+    border-bottom: none;
+  }
+  
+  .madoko .cell-line, .madoko .cell-double-line {
+    border-bottom: 1px solid black;
+    border-top: none;
+  }
+  
+  .madoko .cell-double-line {
+    border-top: 1px solid black;
+    padding-top: 1.5px !important;
+  }
+  
+  
+  /* Math Pre */
+  .madoko .input-mathpre .MathJax_Display {
+    text-align: left !important;
+  }
+  
+  .madoko div.input-mathpre {
+    text-align: left;
+    margin-top: 1.5ex;
+    margin-bottom: 1ex;
+  }
+  
+  .madoko .math-rendering {
+    color: gray;
+  }
+  
+  /* Math */
+  .madoko .mathdisplay {
+    text-align: center;
+  }
+  
+  
+  /*---------------------------------------------------------------------------
+    Default style for syntax highlighting
+  ---------------------------------------------------------------------------*/
+  
+  .highlighted                        { color: black; }
+  .highlighted .token.identifier      { }
+  .highlighted .token.operators       { }
+  .highlighted .token.keyword         { color: blue }
+  .highlighted .token.string          { color: maroon } 
+  .highlighted .token.string.escape   { color: gray }
+  .highlighted .token.comment         { color: darkgreen }
+  .highlighted .token.comment.doc     { font-style: normal }
+  .highlighted .token.constant        { color: purple; }
+  .highlighted .token.entity          {  }
+  .highlighted .token.tag             { color: blue }
+  .highlighted .token.info-token      { color: black }
+  .highlighted .token.warn-token      { color: black }
+  .highlighted .token.error-token     { color: darkred }
+  .highlighted .token.debug-token     { color: gray }
+  .highlighted .token.regexp          { color: maroon }
+  .highlighted .token.attribute.name  { color: navy }
+  .highlighted .token.attribute.value { color: maroon }
+  .highlighted .token.constructor     { color: purple }
+  .highlighted .token.namespace       { color: navy }
+  .highlighted .token.header          { color: navy }
+  .highlighted .token.type            { color: teal } 
+  .highlighted .token.type.delimiter  { color: teal; } 
+  .highlighted .token.predefined      { color: navy }
+  .highlighted .token.invalid         { border-bottom: red dotted 1px }
+  .highlighted .token.code            { color: maroon }
+  .highlighted .token.code.keyword    { color: navy }
+  .highlighted .token.typevar         { font-style: italic; }
+  
+  .highlighted .token.delimiter   {  } /* .[curly,square,parenthesis,angle,array,bracket] */
+  .highlighted .token.number      {  }    /* .[hex,octal,binary,float] */
+  .highlighted .token.variable    {  }  /* .[name,value]  */
+  .highlighted .token.meta        { color: navy }      /* .[content] */
+  
+  .highlighted .token.bold            { font-weight: bold; }
+  .highlighted .token.italic          { font-style: italic; }
+  
+  
+  /* Pretty formatting of code */
+  .madoko pre.pretty, .madoko code.pretty { 
+    font-family: Cambria,Times,Georgia,serif;
+    font-size: 100%;
+  }
+  
+  .madoko .pretty table {
+    border-collapse: collapse;
+  }
+  .madoko .pretty td {
+    padding: 0em;
+  }
+  .madoko .pretty td.empty {
+    min-width: 1.5ex;
+  }
+  .madoko .pretty td.expander {
+    width: 100em;
+  }
+  .madoko .pretty .token.identifier         { font-style: italic }
+  .madoko .pretty .token.constructor        { font-style: italic }
+  
+  
+  /* ---------------------------------------------------
+     Styling for full documents
+  ----------------------------------------------------*/
+  body.madoko {
+    font-family: Cambria,"Times New Roman","Liberation Serif","Times",serif;
+    -webkit-text-size-adjust: 100%;       /* so math displays well on mobile devices */
+    text-rendering: optimizeLegibility;
+  }
+  
+  body.madoko {
+    max-width: 88ex; /* about 88 characters */
+    margin: 1em auto;
+    padding: 0em 2em;  
+  }
+  
+  body.preview.madoko {
+    padding: 0em 1em;
+  }
+  
+  .madoko p,
+  .madoko li {
+    text-align: justify;
+  }
+  
+  /* style headings nicer, especially h5 and h6 */
+  .madoko h1, .madoko h2, .madoko h3, .madoko h4 { 
+    margin-top: 1.22em; 
+    margin-bottom: 1ex;
+  }
+  .madoko h1+p, .madoko h2+p, .madoko h3+p, .madoko h4+p, .madoko h5+p  { 
+    margin-top: 1ex;    
+  }
+  .madoko h5, .madoko h6 { 
+    margin-top: 1ex;
+    font-size: 1em;
+  }
+  .madoko h5 { 
+    margin-bottom: 0.5ex;
+  }
+  .madoko h5 + p {
+    margin-top: 0.5ex;
+  }
+  .madoko h6 { 
+    margin-bottom: 0pt;
+  }
+  .madoko h6 + p {
+    margin-top: 0pt;
+  }
+  
+  
+  /* Fix monospace display (see http://code.stephenmorley.org/html-and-css/fixing-browsers-broken-monospace-font-handling/) */
+  .madoko pre, .madoko code, .madoko kbd, .madoko samp, .madoko tt, .madoko .monospace, .madoko .token.indent, .madoko .reveal pre, .madoko .reveal code, .madoko .email {
+    font-family: Consolas,"Andale Mono WT","Andale Mono",Lucida Console,Monaco,monospace,monospace;
+    font-size: 0.85em;
+  }
+  .madoko pre code, .madoko .token.indent {
+    font-size: 0.95em;
+  }
+  
+  .madoko pre code {
+    font-family: inherit !important;
+  }
+  
+  /* Code prettify */
+  .madoko ol.linenums li {
+    background-color: white;
+    list-style-type: decimal;
+  }
+  
+  /* Merging */
+  .madoko .remote {
+    background-color: #F0FFF0;
+  }
+  .madoko .remote + * {
+    margin-top: 0pt;
+  }
+  
+  /* ---------------------------------------------------
+     Print settings
+  ----------------------------------------------------*/
+  
+  @media print {
+    body.madoko {
+      font-size: 10pt;
+    }
+    @page {
+      margin: 1in 1.5in;
+    }
+  }
+  
+  /* ---------------------------------------------------
+     Mobile device settings
+  ----------------------------------------------------*/
+  
+  @media only screen and (max-device-width:1024px) {
+    body.madoko {
+      padding: 0em 1em;
+    }
+  }
+  
+    </style>
+  
+  </head>
+<body class="madoko">
+
+<div class="body madoko" style="line-adjust:0">
+
+<div class="titleblock align-center para-block" style="text-align:center;line-adjust:0">
+<div class="titleheader align-center" style="text-align:center;line-adjust:0">
+<div class="title para-block" style="font-size:xx-large;font-weight:bold;margin-bottom:0.5ex;line-adjust:0">Carl V. Lewis</div>
+<div class="subtitle para-block" style="font-size:x-large;margin-bottom:0.5ex;line-adjust:0"><em class="em-star1">Data Visualization Journalist - Mobile Developer - Digital Educator</em></div></div></div>
+<p class="p noindent para-continued"><br>
+  
+</p>
+<blockquote>
+
+<p class="p noindent">Numbers have an important story to tell;
+they rely on you to give them
+a clear and convincing voice
+&#8195;&#8195; &#8212; Stephen Few
+</p></blockquote>
+<hr  class="madoko" style="display:block">
+
+<p class="p noindent"><br>
+</p><h7 id="sec-contact" class="h6" data-heading-depth="6" style="display:block">CONTACT</h7>
+<p class="p noindent"><a href="http://carlvlew.is">http://carlvlew.is</a> 
+</p>
+<p class="p indent">Email:<code class="code code1">hello@carlvlew.is</code>
+</p>
+<p class="p indent">Mobile:<code class="code code1">+1 (912) 816-7007</code>
+</p>
+<p class="p indent">Github: <code class="code code1">@carlvlewis</code>
+</p><h4 id="sec-qualifications-summary" class="h3" data-heading-depth="3" style="display:block">Qualifications summary</h4>
+<ul class="ul list-star compact">
+<li class="li ul-li list-star-li compact-li">A post-platform journalist
+</li>
+<li class="li ul-li list-star-li compact-li">web developer
+</li>
+<li class="li ul-li list-star-li compact-li">design thinker
+</li>
+<li class="li ul-li list-star-li compact-li">product manager
+</li>
+<li class="li ul-li list-star-li compact-li">interaction designer
+</li>
+<li class="li ul-li list-star-li compact-li">digital media educator and data visualization developer with more than 7 years of experience in data journalism
+</li>
+<li class="li ul-li list-star-li compact-li">news graphics
+</li>
+<li class="li ul-li list-star-li compact-li">newsroom interactive storytelling
+</li>
+<li class="li ul-li list-star-li compact-li">curriculum design
+</li>
+<li class="li ul-li list-star-li compact-li">digital publishing
+</li>
+<li class="li ul-li list-star-li compact-li">homepage editing
+</li>
+<li class="li ul-li list-star-li compact-li">product management
+</li>
+<li class="li ul-li list-star-li compact-li">media entrepreneurship
+</li>
+<li class="li ul-li list-star-li compact-li">digital strategy/social media management`* mobile front-end design/development
+</li>
+<li class="li ul-li list-star-li compact-li">interaction programming and Wordpress/Drupal content management development.
+</li></ul>
+<h4 id="sec-technical-skills" class="h3" data-heading-depth="3" style="display:block">Technical Skills</h4>
+<ul class="ul list-star compact">
+<li class="li ul-li list-star-li compact-li"><strong class="strong-star2">Web Development</strong>: <code class="code code1">HTML5</code> <code class="code code1">CSS3</code> <code class="code code1">Javascript</code> <code class="code code1">Python-Django</code> <code class="code code1">d3.js</code> <code class="code code1">WordPress/Drupal development</code> <code class="code code1">Twitter Bootstrap</code> <code class="code code1">Ruby on Rails</code> <code class="code code1">Git workflow</code> <code class="code code1">Markdown</code> <code class="code code1">jQuery</code> <code class="code code1">CartoDB</code> <code class="code code1">Leaflet.js</code> <code class="code code1">Curriculum Design</code> 
+</li>
+<li class="li ul-li list-star-li compact-li"><strong class="strong-star2">Digital Media</strong>: <code class="code code1">Digital Media Business Models</code> <code class="code code1">Hacking the news</code> <code class="code code1">iPhoneography/mobile reporting</code> <code class="code code1">Multimedia/real-time reporting.</code> <code class="code code1">Interactive storytelling.</code> <code class="code code1">MapBox Studio-Open Street Maps</code> <code class="code code1">News metrics and analytics</code> <code class="code code1">Content marketing for newsrooms</code> <code class="code code1">Digital audience acquisition and retention strategies</code> <code class="code code1">Deadline daily news writing and reporting</code> <code class="code code1">Data visualization under deadline</code> <code class="code code1">Journalism in all formats (post-platform)</code> <code class="code code1">R</code> <code class="code code1">Educational technology.</code> <code class="code code1">Syllabus/curriculum preparation and delivery.</code> <code class="code code1">Data Visualization</code> <code class="code code1">Google tools (viz. playground, fusion tables, Refine, etc.)</code> <code class="code code1">Documentation writing</code> 
+</li></ul>
+<h4 id="sec-education" class="h3" data-heading-depth="3" style="display:block">Education</h4><table class="madoko block">
+<thead><tr><th class="col thead tr-odd tr-last tr-first col-odd col-first" data-row="1" data-col="1" style="font-weight:bold;text-align:center">Degree </th><th class="col thead tr-odd tr-last tr-first col-even" data-row="1" data-col="2" style="font-weight:bold;text-align:center"> Major </th><th class="col thead tr-odd tr-last tr-first col-odd" data-row="1" data-col="3" style="font-weight:bold;text-align:center"> Institution </th><th class="col thead tr-odd tr-last tr-first col-even" data-row="1" data-col="4" style="font-weight:bold;text-align:center"> Graduation Year </th><th class="col thead tr-odd tr-last tr-first col-odd col-last" data-row="1" data-col="5" style="font-weight:bold;text-align:center"> GPA</th></tr></thead>
+<tbody><tr><td class="tbody tr-odd tr-first col col-odd col-first" data-row="1" data-col="1" style="text-align:center">Masters of Science </td><td class="tbody tr-odd tr-first col col-even" data-row="1" data-col="2" style="text-align:center"> Digital Media, Data Visualization </td><td class="tbody tr-odd tr-first col col-odd" data-row="1" data-col="3" style="text-align:center"> Columbia University Graduate School of Journalism </td><td class="tbody tr-odd tr-first col col-even" data-row="1" data-col="4" style="text-align:center"> 2012 </td><td class="tbody tr-odd tr-first col col-odd col-last" data-row="1" data-col="5" style="text-align:center"> Honors </td></tr>
+<tr><td class="tbody tr-even col col-odd col-first" data-row="2" data-col="1" style="text-align:center">Bachelor of Arts </td><td class="tbody tr-even col col-even" data-row="2" data-col="2" style="text-align:center"> Journalism,Southern Studies, Honors. </td><td class="tbody tr-even col col-odd" data-row="2" data-col="3" style="text-align:center"> Mercer University </td><td class="tbody tr-even col col-even" data-row="2" data-col="4" style="text-align:center"> 2011 </td><td class="tbody tr-even col col-odd col-last" data-row="2" data-col="5" style="text-align:center"> 3.94</td></tr>
+<tr><td class="tbody tr-odd tr-last col col-odd col-first" data-row="3" data-col="1" style="text-align:center">Year Abroad </td><td class="tbody tr-odd tr-last col col-even" data-row="3" data-col="2" style="text-align:center"> Philosophy, Media Propaganga </td><td class="tbody tr-odd tr-last col col-odd" data-row="3" data-col="3" style="text-align:center"> University of Oxford, St. Peter&#39;s College </td><td class="tbody tr-odd tr-last col col-even" data-row="3" data-col="4" style="text-align:center"> 2010 </td><td class="tbody tr-odd tr-last col col-odd col-last" data-row="3" data-col="5" style="text-align:center">4.0</td></tr></tbody></table><h4 id="sec-professional-experience" class="h3" data-heading-depth="3" style="display:block">Professional Experience</h4>
+<ul class="ul list-star compact">
+<li class="li ul-li list-star-li compact-li">Research Assistant, Tow Center for Digital Journalism (Oct. 2014 – present)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Assisting in Tow Center&#39;s research endeavors.
+</li>
+<li class="li ul-li list-dash-li compact-li">Preparing own research for upcoming report on optimizing data visualization projects for mobile users.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Data Journalism Consultant, Vocativ (Aug. 2014 – Sept. 2014)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Invited to serve as one-month, in-house training consultant for Vocativ.com&#39;s rapidly expanding Manhattan newsroom, primarily teaching reporters how to incorporate and visualize data in their stories in a way that sheds a new light on the story for users.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Adjunct instructor, faculty news organization advisor, Center for Collaborative Journalism at Mercer University (Jun. 2013 – present)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Teach courses on JavaScript, HTML and CSS basics, mobile development best-practices, real-time reporting, data journalism and visual storytelling
+</li>
+<li class="li ul-li list-dash-li compact-li">Serve alongside faculty, journalists and media professionals as an instructor for annual Camp CCJ for digital media students at Center for Collaborative Journalism.
+</li>
+<li class="li ul-li list-dash-li compact-li">Spoken on panels with editors and professors, including - How is Journalism Different in the Digital Age? , - Social Media for Journalists, - Building a Brand as a Journalist  and  - Mobile App Development with Little-to-No Programming Experience.
+</li>
+<li class="li ul-li list-dash-li compact-li">Led lightning talks on topics including -Making the Business of Digital Journalism Work, -Audience and Metrics and -Wireframing, Prototyping and UX. -Serve as advisor for student news organization, The Cluster, leading quarterly workshops and remotely helping fix problems as they may arise on mercercluster.com. Oversaw 2014 redesign of site.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Co-Founder, Borrow.ly (March 2003 – present)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Upon receiving a $5,000 exploratory grant from The Collaborative Fund in early 2014, my business partner and I set out to build the product I long believed could help shift decades of audience and revenue loss at daily newspapers from the once-lucrative classified advertising section, revenue which was swiftly poached by P2P exchanges such as Craigslist and eBay.
+</li>
+<li class="li ul-li list-dash-li compact-li">
+<p>We built the product using the Ruby on Rails programming language, and it received widespread acclaim and a loyal local audience in our initial target market in Fort Greene, Brooklyn.-Briefly named : one of Silicon Alley&#39;s hottest civic-tech startups by StartupBoost.
+</p></li></ul></li>
+<li class="li ul-li list-star-li compact-li">Instructor, &#34;Basics of Modern Web Design&#34;, Shuttl.es (April 2014 – July 2014)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Taught a 12-week micro-learning course via email and in person at the Brooklyn-based TinyLabs, NYC.-Instructed students ranging in age from as young as 15 to as old as 52.
+</li>
+<li class="li ul-li list-dash-li compact-li">5 in-person classes, 20 micro-lessons digitally.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Newsroom Change Consultant, Jacksonville Daily-Record (Jan. 2013 – Feb. 2014)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Developed device-agnostic stylesheet and more user-friendly editorial placement of content.
+</li>
+<li class="li ul-li list-dash-li compact-li">Monetized digital presence with local display and inline ads.
+</li>
+<li class="li ul-li list-dash-li compact-li">Presented legal, real estate and public notice data in interactive format.
+</li>
+<li class="li ul-li list-dash-li compact-li">Implemented integrated print and digital CMS that uses Google Docs as intermediary between InCopy and Wordpress.
+</li>
+<li class="li ul-li list-dash-li compact-li">Trained staffers/journalists on new CMS, mobile reporting, social media best practices.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Digital Media Manager, Online Editor, Social Media Editor, Savannah Morning News (Morning News Media) (Aug. 2012 – Jan. 2014)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Worked as Digital Media Manager in Savannah following the death of my father to be closer to my mom.
+</li>
+<li class="li ul-li list-dash-li compact-li">Oversaw content production, digital/social outreach and product development for savannahnow.com, dosavannah.com and other cross-platform company products, achieving a nearly 500 percent growth in social reach and a record 7 million monthly pageviews.
+</li>
+<li class="li ul-li list-dash-li compact-li">Managed team of online producers/digital journalists; collaborated with traditional reporters and editors on optimizing print content for digital platforms; worked with marketing and sales departments to bridge the gap between editorial and sales in an ethical manner.
+</li>
+<li class="li ul-li list-dash-li compact-li">Developed and executed growth strategies for company-wide social media platforms, including existing accounts on Facebook and Twitter and new accounts on Instagram, Vine, Tumblr and Pinterest to reach younger audiences,
+</li>
+<li class="li ul-li list-dash-li compact-li">Increased weekly average social reach from 21,000 to an average of 375,000 by end date. Grew Facebook fans from approximately 8.5K to 24K.
+</li>
+<li class="li ul-li list-dash-li compact-li">Introduced &#8220;sponsored posts&#8221; on dosavannah.com, as well as &#8220;sponsored tweets&#8221; using retweets from the handle [at]SMNsponsored.
+</li>
+<li class="li ul-li list-dash-li compact-li">Increased Facebook following by more than 115 percent in less than a year. Started new Instagram account that gained 1,400 followers within 7 months.
+</li>
+<li class="li ul-li list-dash-li compact-li">Monitored and responded to metrics using Adobe Omniture, Google Analytics, Chartbeat, Parse.ly, Sprout Social and Sparkwise.
+</li>
+<li class="li ul-li list-dash-li compact-li">Introduced and trained staffers on new interactive forms of storytelling that allowed producers and reporters to visualize public data with little programming skills.
+</li>
+<li class="li ul-li list-dash-li compact-li">Led native app development for iOS and Android platforms. Responsible for 19K app downloads.
+</li>
+<li class="li ul-li list-dash-li compact-li">Developed HTML5/responsive content strategies and products, including the June 2013 launch of dosavannnah.com.
+</li>
+<li class="li ul-li list-dash-li compact-li">Represented company on Morris Publishing Group&#39;s corporate-wide Social Media and Mobile Stategy task-forces
+</li>
+<li class="li ul-li list-dash-li compact-li">Redesigned Savannah Morning News Mobile App, causing a threefold increase in active users in two weeks.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Product Manager, Digital Content Marketer, Front-End Developer, DoSavannah.com (Morning News Media) (March 2013 – Nov. 2013)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">As a way to reach younger demographics, our management team at Savannah Morning News decided to expand its arts and culture section into a standalone alt-weekly. I was tasked with building the digital products.
+</li>
+<li class="li ul-li list-dash-li compact-li">Developed, designed and launched dosavannah.com and its associated native iOS and Android apps, in addition to my responsibilities as Digital Media Manager.
+</li>
+<li class="li ul-li list-dash-li compact-li">Introduced &#8220;Sponsored Posts,&#8221; a native advertising plan that garnered more than $30,000 in new sponsorship revenue its month-long first sales round.
+</li>
+<li class="li ul-li list-dash-li compact-li">Created editorial workflow and trained staffers on using Drupal 7 as a CMS.
+</li>
+<li class="li ul-li list-dash-li compact-li">Introduced &#8220;The Big Calendar,&#8221; which quickly became Savannah&#39;s top-visited event guide.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Online Editor, Exposition Magazine (March 2010 – Apr. 2012)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Developed website and online publishing system for current affairs magazine at Oxford University using WordPress backend.
+</li>
+<li class="li ul-li list-dash-li compact-li">Oversaw online content and site production for expositionmagazine.com, including measuring and reporting site analytics, developing SEO strategies and retooling UX to fit the needs of print redesign. 
+</li>
+<li class="li ul-li list-dash-li compact-li">Managed digital advertising sales and placement with sponsors Pulse Printing and Oxford Castle.
+</li>
+<li class="li ul-li list-dash-li compact-li">Temporarily maintained and managed site from abroad; wrote detailed site documentation for future maintenance.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Director of Digital Media, The Cluster &amp; mercercluster.com (Nov. 2010 – Jul. 2012)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Founded, developed and launched MercerCluster.com, the online edition of Mercer University&#39;s student newspaper, The Cluster.
+</li>
+<li class="li ul-li list-dash-li compact-li">Created digital workflow, trained staff in content management, drafted detailed site documentation for future student editors.
+</li>
+<li class="li ul-li list-dash-li compact-li">Grew Facebook ‘likes’ from around 30 to more than 900 in less than a month with integrated social media campaign, involving a grassroots contest and non-monetary incentives.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">News Editor, Online Editor, The Oxford Student (Jan. 2009 – June 2009)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Produced and edited entire 12-page news section of the University of Oxford’s official student newspaper.- Managed team of 14 reporters and covered more than 40 stories individually.
+</li>
+<li class="li ul-li list-dash-li compact-li">Redesigned newspaper website and developed digital workflow. 
+</li>
+<li class="li ul-li list-dash-li compact-li">Trained staff in content management system. 
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Metro intern, weekend cops reporter, The Telegraph &amp; macon.com (May 2009 – Dec. 2010)
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Worked first as a news reporting intern, then as a weekend beat reporter at Georgia&#39;s third-largest daily newspaper.
+</li>
+<li class="li ul-li list-dash-li compact-li">Covered general news assignments, as well as local/state politics, crime and education beats.
+</li>
+<li class="li ul-li list-dash-li compact-li">Covered more than 110 deadline news stories as an undergraduate.
+</li></ul></li></ul>
+<h4 id="sec-selected-projects" class="h3" data-heading-depth="3" style="display:block">Selected Projects</h4>
+<ul class="ul list-star compact">
+<li class="li ul-li list-star-li compact-li">Interactive: Savannah-Chatham Restaurant Inspection Database
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Worked with the Chatham County Health Department, which serves a population of more than 420,000 residents, to integrate county-wide restaurant inspection scores into an XML feed that populates an interactive map produced with CartoDB + Leaflet.js that includes filterable, color-coded markers for each score, allowing users to drill down geographically or filter to see the worst scores.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">The 12 Percent: How People in the Bronx are Coping With the Unemployment Crisis
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Led design, production, project management, narrative and presentation of class-wide project on the unemployment crisis and its effects on the Bronx for The Bronx Ink.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">SavannahNow St. Patrick&#39;s Day 2013 Mobile App
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Managed all aspects of project development for Savannah Morning News&#39; mobile app for the 137th Annual St. Patrick&#39;s Day Parade and Festival, the second-largest annual St. Patrick&#39;s gathering the nation. Success of app, reaching nearly 10,000 downloads, drove savannahnow.com to reach record unique visitors and pageviews.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Storm Guide by savannahnow.com and Georgia Power
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">For the 2013 hurricane season, I built a native iOS and Android app with an accompanying HTML5 mobile site to tie in with the print edition of our annual “Hurricane Guide” sponsored by Georgia Power. Sponsorship netted $30,000 in new revenue for company.
+</li></ul></li>
+<li class="li ul-li list-star-li compact-li">Interactive: Who are the biggest polluters in Georgia – and why?
+
+<ul class="ul list-dash compact">
+<li class="li ul-li list-dash-li compact-li">Worked alongside SMN environmental reporter Mary Landers to distill EPA data into meaningful metrics, using the resulting benchmarks to produce an interactive bubble map, charts and table of the states&#39;s worst offenders.
+</li></ul></li></ul>
+<h6 id="sec-interactive--chatham-county-commission-payments-vary-widely-but-why" class="h5" data-heading-depth="5" style="display:block">Interactive: Chatham County Commission Payments Vary Widely. But why?</h6>
+<ul class="ul list-plus compact">
+<li class="li ul-li list-plus-li compact-li">Worked alongside SMN county government reporter Eric Curl to take county spending data and break down the logical gaps and holes, which later resulted in a three-part investigative series on the county&#39;s inaccurate budgeting habits.
+</li></ul>
+<h4 id="sec-academic-publications" class="h3" data-heading-depth="3" style="display:block">Academic Publications</h4>
+<ul class="ul list-star compact">
+<li class="li ul-li list-star-li compact-li">Lewis, Carl V. <strong class="strong-star2">[Big Data, Small Screens: Displaying Complex, Multivariate Datasets on Mobile – and Does Consumer Mobile Usage Indicate a Positive ROI? Forthcoming from the Tow Center for Digital Journalism.]()</strong> .
+</li>
+<li class="li ul-li list-star-li compact-li">Lewis, Carl V. <strong class="strong-star2">[Transcending the &#39;Editorial Thunder&#39;: Atlanta&#39;s Newspaper Coverage of the 1960 Student Lunch-Counter Sit-ins.]()</strong> The Spires. Mercer University Press; Macon, Ga., 2011. .
+</li>
+<li class="li ul-li list-star-li compact-li">Lewis, Carl V. <strong class="strong-star2">[The Newspaper that Fell From its Ivory Tower: Why the Internet isn&#39;t to Blame for the Decline of The Philadelphia Inquirer.]()</strong> May 2012.
+</li></ul>
+
+<hr  class="madoko" style="display:block">
+
+<p class="p noindent">C. 2015 Carl V. Lewis
+</p>
+<div class="logomadoko block" style="text-align:right;font-size:xx-small;margin-top:4em">Created with&nbsp;<a href="https://www.madoko.net">Madoko.net</a>.</div><span data-line=""></span></div>
+</body>
+
+</html>
