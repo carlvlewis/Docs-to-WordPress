@@ -1,0 +1,26 @@
+Title         : Typesetting the Tufte Way
+Author        : Carl V. Lewis, M.S, Digital Media/Data Visualization.
+Logo          : True
+
+[TITLE]
+
+# Setting the groundwork 
+* More publishers must set aside thee contraints of their CMS to engage audiences as much as possible.
+## Liberating Interactive Data Visualization from the Constraints of a Clunky CMS: Challeges, Benefits and Examples
+In his seminal work *The Visual Display of Quantitative Information,* information design pioneer Edward Tufte liberated the traditional manuscript format fom the conventions of pages and chapters into visually compelling, graphic-rich and side-margined treatises on information design.
+
+
+
+### 
+
+--
+
+In his seminal work *The Visual Display of Quantitative Information*, information design pioneer Edward Tufte liberated the traditional manuscript format fom the conventions of pages and chapters into visually compelling and side-margined treatises on information design.
+
+* Read the [reference manual].
+* Explore the upper-right toolbox menu to discover how Markdown works. 
+* `Alt-Q` reformats the current paragraph.
+
+Enjoy!
+
+[reference manual]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html  "Madoko refrence manual"
